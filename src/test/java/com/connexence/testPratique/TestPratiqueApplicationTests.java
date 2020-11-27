@@ -30,33 +30,15 @@ class TestPratiqueApplicationTests {
 		troisiemeChatton.setDescriptiion("Douillet Chatton");
 		chattonRepository.save(troisiemeChatton);
 		
-		//List<Chatton> chattons = chattonController.n;
+		chattonController.postChatton(troisiemeChatton);
+		List<Chatton> chattons = chattonRepository.findAll();
 		
-		//assertTrue(chattons.size() == 0);
+		assertTrue(chattons.size() == 2);
 	} 
 	
 	
 	@Test
 	void testGetChattons() {
-
-		/*Chatton premierChatton = new Chatton();
-		premierChatton.setNom("Scott");
-		premierChatton.setAge(4);
-		premierChatton.setDescriptiion("Beau Chatton");
-		chattonRepository.save(premierChatton);
-
-		Chatton deuxiemeChatton = new Chatton();
-		deuxiemeChatton.setNom("Marie-Antoinette");
-		deuxiemeChatton.setAge(2);
-		deuxiemeChatton.setDescriptiion("Mignon Chatton");
-		chattonRepository.save(deuxiemeChatton);
-
-		Chatton troisiemeChatton = new Chatton();
-		troisiemeChatton.setNom("Marie-Josee");
-		troisiemeChatton.setAge(34);
-		troisiemeChatton.setDescriptiion("Douillet Chatton");
-		chattonRepository.save(troisiemeChatton);*/
-
 		List<Chatton> chattons = chattonController.getChattons();
 		
 		assertTrue(chattons.size() == 2);
